@@ -1,19 +1,17 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.roottool0.riderlink</id>
+    <id>com.rootengine.riderlink</id>
     <name>RiderLink</name>
-    <vendor>roottool0</vendor>
+    <vendor>RootEngine</vendor>
     <description><![CDATA[
-        <p><b>RiderLink</b> is a repository that provides a pure template to make it easier to create a new plugin project.</p>
-        <p>The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.</p>
+    Rider Link Plugin for Root Engine
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <depends>com.intellij.modules.cidr.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.roottool0.riderlink.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.roottool0.riderlink.startup.MyProjectActivity" />
+        <codeInsight.lineMarkerProvider 
+            language="ObjectiveC" 
+            implementationClass="com.rootengine.riderlink.ColorPreviewMarkerProvider"/>
     </extensions>
 </idea-plugin>
